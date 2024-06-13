@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="/static/login.css">
+{% endblock %}
+
+{% block content %}
+<div class="container dashboard-container">
+    <div class="user-info">
+        <h4>Welcome, {{address}}</h4>
+        <button type="button" class="btn btn-primary" onclick="location.href='/'">Logout</button>
+    </div>
+    <div class="user-actions">
+        <h5>Choose an Action:</h5>
+        <div class="action-item"><a href="/create_property?address={{address}}">Create Property</a></div>
+        <div class="action-item"><a href="/change_property?address={{address}}">Change Property Status</a></div>
+        <div class="action-item"><a href="/estates?address={{address}}">Get Property Information</a></div>
+        <div class="action-item"><a href="/create_ad?address={{address}}">Create Advertisement</a></div>
+        <div class="action-item"><a href="/change_ad?address={{address}}">Change Advertisement Status</a></div>
+        <div class="action-item"><a href="/ads?address={{address}}">Get Advertisement Information</a></div>
+        <div class="action-item"><a href="/buy?address={{address}}">Buy Property</a></div>
+        <div class="action-item"><a href="/get_balance?address={{address}}">Get Balance</a></div>
+        <div class="action-item"><a href="/withdraw?address={{address}}">Withdraw Funds</a></div>
+    </div>
+</div>
+{% endblock %}

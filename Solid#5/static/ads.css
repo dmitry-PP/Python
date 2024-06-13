@@ -1,0 +1,24 @@
+.container {
+            margin-top: 50px;
+        }
+
+        .advertisement-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .advertisement-details h5 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .advertisement-details p {
+            margin-bottom: 5px;
+        }
+
+        .btn-main-menu {
+            margin-top: 20px;
+        }

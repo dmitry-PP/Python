@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="static/index.css">
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="text-center">
+        <h1>Welcome to our Website!</h1>
+        <p>Please log in or register to continue.</p>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary btn-block" onclick="location.href='auth'">Login</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-primary btn-block" onclick="location.href='register'">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

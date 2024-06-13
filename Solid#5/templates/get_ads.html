@@ -1,0 +1,36 @@
+
+
+{% extends "main.html" %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="static/ads.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            {% for ind,ad in ads%}
+            <div class="advertisement-card">
+                <div class="advertisement-details">
+                    <h5>Advertisement #{{ind}}</h5>
+                    <p>Time: {{get_time(ad)}}</p>
+                    <p>Status: {{get_status(ad)}}</p>
+                    <p>Price: {{ad[2]}}</p>
+                    <p>Property Number: {{ad[-1]}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- Add more advertisement cards here -->
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-primary btn-main-menu" onclick="location.href='/login/{{address}}'">Cancel</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

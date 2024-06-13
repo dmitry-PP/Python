@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="static/properties.css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            {% for estate in estates %}
+            <div class="property-card">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{{estate[2]}}" alt="Property Image" class="property-image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="property-details">
+                            <h5>Property #{{estate[0]}}</h5>
+                            <p>Size: {{estate[1]}} sq. m</p>
+                            <p>Rooms: {{estate[-2]}}</p>
+                            <p>Type: {{get_type(estate)}}</p>
+                            <p>Status: {{get_status(estate)}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- Add more property cards here -->
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <button type="button" class="btn btn-primary btn-main-menu" onclick="location.href='/login/{{address}}'">Cancel</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

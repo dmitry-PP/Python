@@ -1,0 +1,43 @@
+
+{% extends "main.html" %}
+
+{% block extra %}
+<style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .error-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .error-heading {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #dc3545; /* Bootstrap's danger color */
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 error-container">
+            <h1 class="error-heading">Error!</h1>
+            <p class="error-message">Данного аккаунта не существует в сети</p>
+            <p class="error-message">Попробуйте зарегистрироваться или авторизоваться</p>
+            <button class="btn btn-primary btn-back" onclick="location.href='/'">Back to Home</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

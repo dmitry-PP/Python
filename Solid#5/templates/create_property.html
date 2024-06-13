@@ -1,0 +1,54 @@
+{% extends "main.html" %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="static/register.css">
+{% endblock %}
+
+{% block content %}
+<div class="container registration-container">
+
+    <div class="col-md-6">
+        <div class="col">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+    {% endwith %}
+        </div>
+        <form class="registration-form" method="POST" id="register">
+            <h2 class="mb-4">Create Property</h2>
+            <div class="form-group">
+                <label for="size">Размер недвижимости (кв. м)</label>
+                <input type="number" class="form-control" name="size" id="size" placeholder="Enter Size" required>
+            </div>
+            <div class="form-group">
+                <label for="file">URL или хэш изображения недвижимости</label>
+                <input type="text" class="form-control" name="file" id="file" placeholder="Enter Url" required>
+            </div>
+            <div class="form-group">
+                <label for="rooms">Количество комнат</label>
+                <input type="number" class="form-control" name="rooms" id="rooms" placeholder="Enter Rooms" required>
+            </div>
+            <div class="form-group">
+                <label for="estate_type">Тип недвижимости</label>
+                <select class="form-control" id="estate_type" name="estate_type" required>
+                    <option value="0">House</option>
+                    <option value="1">Flat</option>
+                    <option value="2">Loft</option>
+                </select>
+            </div>
+            <div class="error-message" id="password-error"></div>
+        </form>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-outline-secondary btn-block" onclick="location.href='/login/{{address}}'">Cancel</button>
+            </div>
+            <div class="col">
+                <button type="submit" form="register" class="btn btn-success btn-block">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

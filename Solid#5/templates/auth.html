@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="static/register.css">
+{% endblock %}
+
+{% block content %}
+<div class="container registration-container">
+
+    <div class="col-md-6">
+        <div class="col">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+    {% endwith %}
+        </div>
+        <form class="registration-form" method="POST" id="register">
+            <h2 class="mb-4">Auth Form</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" name="public" id="public" placeholder="Enter Public Key" style="margin-bottom:10px;">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+            </div>
+            <div class="error-message" id="password-error"></div>
+        </form>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-outline-secondary btn-block" onclick="location.href='/'">Cancel</button>
+            </div>
+            <div class="col">
+                <button type="submit" form="register" class="btn btn-success btn-block">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

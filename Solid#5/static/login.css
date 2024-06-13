@@ -1,0 +1,32 @@
+.dashboard-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        .user-info h4 {
+            margin: 0; /* Убираем внутренние отступы */
+        }
+
+        .user-actions {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        .action-item {
+            margin-bottom: 10px;
+            padding-left: 20px; /* Добавляем отступ слева */
+        }

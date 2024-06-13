@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+{% block extra %}
+<link rel="stylesheet" type="text/css" href="static/register.css">
+{% endblock %}
+
+{% block content %}
+<div class="container registration-container">
+
+    <div class="col-md-6">
+        <div class="col">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+    {% endwith %}
+        </div>
+        <div class="col">
+            <h2>Ваш баланс на смарт-контракте: {{ balance }}</h2>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-outline-secondary btn-block" onclick="location.href='/login/{{address}}'">Cancel</button>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
